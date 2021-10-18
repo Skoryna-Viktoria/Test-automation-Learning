@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "test": "wdio run wdio.conf.js",
+    "report": "allure generate ./allure-results --clean && allure open",
+    "mocha-test": "mocha"
+  },
+  "dependencies": {
+    "@wdio/cli": "^7.14.1"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^7.14.1",
+    "@wdio/mocha-framework": "^7.14.1",
+    "@wdio/spec-reporter": "^7.14.1",
+    "chromedriver": "^94.0.0",
+    "wdio-chromedriver-service": "^7.2.2"
+  }
+}
