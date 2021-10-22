@@ -29,19 +29,13 @@ describe('Authorization', async () => {
         await next_btn_reapit.waitForClickable({ timeout: 3000 });
         await next_btn_reapit.click();
 
-        await browser.debug()
 
-        let passord_imput = await $('#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input');
-        await passord_imput.setValue(password);
+        await browser.url('https://support.google.com/accounts/answer/7675428?hl=ru');
 
-        let button_go = await $('#passwordNext');
-        await button_go.waitForClickable({ timeout: 3000 });
-        await button_go.click();
+        let text = await $('/html/body/div[2]/div/section/div/div[1]/article/section/h1');
+        let value = await text.getText();
+        await assert.deepStrictEqual(value, 'Как войти в аккаунт в поддерживаемом браузере', 'YES');
 
-        await assert.deepStrictEqual('Table for autotesting', 'Table for autotesting' , "title text = Table for autotesting");
-
-        var textAut = await $('#docs-title-input-label-inner').getHTML();
-        consol.log(textAut);
     });
-})
+});
 
